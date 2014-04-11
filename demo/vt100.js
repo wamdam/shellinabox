@@ -2687,6 +2687,8 @@ VT100.prototype.handleKey = function(event) {
       switch (key) {
       case 163: /* # for FF15   */ ch = this.applyModifiers(35, event); break;
       case 173: /* - for FF15   */ ch = this.applyModifiers(45, event); break;
+      //case 171: [> + for FF15   <] ch = this.applyModifiers(43, event); break;
+      //case 60:  [> < for FF15   <] ch = this.applyModifiers(60, event); break;
       case   8: /* Backspace    */ ch = '\u007f';                       break;
       case   9: /* Tab          */ ch = '\u0009';                       break;
       case  10: /* Return       */ ch = '\u000A';                       break;
@@ -2954,10 +2956,10 @@ VT100.prototype.keyDown = function(event) {
     event.keyCode == 226;
   var normalKey                 =
     alphNumKey                                   ||
-    event.keyCode ==  61 ||
+    event.keyCode >= 58 && event.keyCode <=  64 ||
     event.keyCode == 106 ||
     event.keyCode >= 109 && event.keyCode <= 111 ||
-    event.keyCode >= 186 && event.keyCode <= 191 ||
+    event.keyCode >= 160 && event.keyCode <= 191 ||
     event.keyCode == 222 ||
     event.keyCode == 252;
   try {
@@ -3097,10 +3099,10 @@ VT100.prototype.keyUp = function(event) {
         event.keyCode >=  96 && event.keyCode <= 105;
       var normalKey               =
         alphNumKey                                   ||
-        event.keyCode ==  59 || event.keyCode ==  61 ||
+        event.keyCode >= 58 && event.keyCode <=  64 ||
         event.keyCode == 106 || event.keyCode == 107 ||
         event.keyCode >= 109 && event.keyCode <= 111 ||
-        event.keyCode >= 186 && event.keyCode <= 192 ||
+        event.keyCode >= 160 && event.keyCode <= 192 ||
         event.keyCode >= 219 && event.keyCode <= 223 ||
         event.keyCode == 252;
       var fake                    = [ ];
