@@ -34,3 +34,5 @@ shellinaboxd
 shellinaboxd.1
 shellinaboxd.ps
 stamp-h1
+certificate-localhost.pem
+certificate.pem
