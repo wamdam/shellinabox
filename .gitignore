@@ -1,6 +1,7 @@
 *.o
 *.lo
 *~
+.deps
 .libs
 Makefile
 config.guess.dh-orig
